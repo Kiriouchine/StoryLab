@@ -1,0 +1,111 @@
+{
+  "2": {
+    "inputs": {
+      "ckpt_name": "novaFurryXL_ilV140.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "4": {
+    "inputs": {
+      "width": 1536,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "Describe flight in the air Scientist, Philosopher; Birds, Airplanes; Flight, Morality; Lift, Good Deeds; Thrust, Personal Growth; Weight, Ego; Drag, Challenges; Stability, Consistency; Thrust-to-drag ratio, Virtuous Actions; Power source, Strength; Highly detailed, Photorealistic, 8k resolution, Sharp focus, Masterpiece, Intricate, Cinematic composition, Award-winning.\n",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "embedding:lazyneg, worst quality, low quality, blurry, bad anatomy, text, watermark, source_furry, (furry), signature, worst quality, furry, text, ugly, inconsistent, vague, blurry, disfigured, twisted, odd, deformed, crosseyed, bad hand, poorly drawn face, blurry, blurry face, monochrome, simple background, blurry eyes, lowres, jpeg artifacts ",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "seed": 985801647093084,
+      "steps": 25,
+      "cfg": 4,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "simple",
+      "denoise": 0.88,
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "8": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE Decode (Tiled)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "Chat",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+* text=auto
+# cmd.exe and Inno Setup want Windows line endings
+*.cmd text eol=crlf
+*.iss text eol=crlf
+*.exe binary
+*.png binary
+*.ico binary

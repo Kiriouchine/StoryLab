@@ -1,0 +1,304 @@
+{
+ "_about": "Everything Story Lab Setup fetches, where from, how it is checked, and its licence. Sources verified 2026-10-17 (music: 2026-10-18) (installer/probe_sources.py: CivitAI by-hash + model API, Hugging Face tree API, GitHub release digests). sha256 is checked after every download; size_bytes drives the disk check and progress bars.",
+ "manifest_version": 2,
+ "civitai_key_page": "https://civitai.com/user/account",
+ "components": {
+  "core": "Text + voice: Ollama, Rocinante, Kokoro",
+  "classical": "Classical and Medium pictures: ComfyUI + Nova Furry XL (Illustrious)",
+  "cinematic": "Cinematic pictures: ComfyUI + Anima",
+  "music": "Background music: ComfyUI + ACE-Step 1.5"
+ },
+ "items": [
+  {
+   "id": "ollama",
+   "component": "core",
+   "what": "Ollama for Windows - runs the story model on your graphics card",
+   "kind": "program",
+   "source": "github",
+   "url": "https://github.com/ollama/ollama/releases/download/v0.40.5/OllamaSetup.exe",
+   "version": "0.40.5",
+   "size_bytes": 1584489392,
+   "sha256": "ea0b50685d382bc0af164abdbf9b41bd89abb98de14fc51e4890a7176757a519",
+   "auth": "none",
+   "licence": {
+    "name": "MIT License",
+    "url": "https://github.com/ollama/ollama/blob/main/LICENSE",
+    "summary": "Free to use, copy and change; keep the copyright notice."
+   }
+  },
+  {
+   "id": "rocinante",
+   "component": "core",
+   "what": "Rocinante-X-12B v1 (Q4_K_M) - the story model, by TheDrummer",
+   "kind": "model",
+   "source": "ollama-pull",
+   "pull": "hf.co/bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF:Q4_K_M",
+   "hf_repo": "bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF",
+   "hf_file": "TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf",
+   "size_bytes": 7477207712,
+   "sha256": "1ca25853a19d6b15f9a94f7e5bc86f4cc88bd0c9dea12a00ea55452b4208ade6",
+   "auth": "none",
+   "licence": {
+    "name": "Mistral NeMo base: Apache License 2.0",
+    "url": "https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407",
+    "url2": "https://huggingface.co/TheDrummer/Rocinante-X-12B-v1",
+    "summary": "A fine-tune of Mistral NeMo (Apache 2.0). The fine-tune's own page states no separate licence; read the model card."
+   }
+  },
+  {
+   "id": "kokoro",
+   "component": "core",
+   "what": "Kokoro-82M - the voices",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "hexgrad/Kokoro-82M",
+   "size_bytes": 355479286,
+   "auth": "none",
+   "licence": {
+    "name": "Apache License 2.0",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "summary": "Free to use, also commercially; keep the licence and notices."
+   }
+  },
+  {
+   "id": "comfyui",
+   "component": "classical+cinematic+music",
+   "what": "ComfyUI, official Windows portable (NVIDIA, CUDA 13) - draws the pictures",
+   "kind": "program",
+   "source": "github",
+   "url": "https://github.com/Comfy-Org/ComfyUI/releases/download/v0.41.0/ComfyUI_windows_portable_nvidia.7z",
+   "version": "0.41.0",
+   "size_bytes": 2010075321,
+   "sha256": "7ff446d6904a9eecdfa07870a06238cc33a6204dcd31726edc6783efd080ac34",
+   "auth": "none",
+   "licence": {
+    "name": "GNU General Public License v3.0",
+    "url": "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+    "summary": "Free software; you may use it for anything. Sharing changed copies must stay GPL."
+   }
+  },
+  {
+   "id": "comfyui_cu126",
+   "component": "classical+cinematic+music",
+   "what": "ComfyUI, official Windows portable (NVIDIA, CUDA 12.6, for 10-series and older cards) - draws the pictures",
+   "kind": "program",
+   "source": "github",
+   "url": "https://github.com/Comfy-Org/ComfyUI/releases/download/v0.41.0/ComfyUI_windows_portable_nvidia_cu126.7z",
+   "version": "0.41.0",
+   "size_bytes": 1901799620,
+   "sha256": "a6160054bf1f17367bdfa4cac33f176fc275771c0edbcc20ec58c75c39de19af",
+   "auth": "none",
+   "licence": {
+    "name": "GNU General Public License v3.0",
+    "url": "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+    "summary": "Free software; you may use it for anything. Sharing changed copies must stay GPL."
+   }
+  },
+  {
+   "id": "novafurry",
+   "component": "classical",
+   "what": "Nova Furry XL IL v14.0 (by Crody) - Classical and Medium scenes, portraits",
+   "kind": "model",
+   "source": "civitai",
+   "model_id": 503815,
+   "version_id": 2484701,
+   "file_id": 2373151,
+   "url": "https://civitai.com/api/download/models/2484701?fileId=2373151",
+   "filename": "novaFurryXL_ilV140.safetensors",
+   "folder": "checkpoints",
+   "size_bytes": 6938484228,
+   "sha256": "a6da48b7a2db532c211a08ce8b4b4e021b987a618c4b5ba54c35bb3e93cb8a58",
+   "auth": "none",
+   "licence": {
+    "name": "Illustrious base: Fair AI Public License 1.0-SD + the creator's CivitAI permissions",
+    "url": "https://civitai.com/models/503815?modelVersionId=2484701",
+    "url2": "https://freedevproject.org/faipl-1.0-sd/",
+    "summary": "Creator allows: images for commercial use, renting, merges/derivatives, no credit needed."
+   }
+  },
+  {
+   "id": "lazyneg",
+   "component": "classical",
+   "what": "lazyneg (by janxd) - optional negative embedding that tidies Classical pictures",
+   "kind": "model",
+   "source": "civitai",
+   "model_id": 1302719,
+   "version_id": 1860747,
+   "file_id": 1760455,
+   "url": "https://civitai.com/api/download/models/1860747?fileId=1760455",
+   "filename": "lazyneg.safetensors",
+   "folder": "embeddings",
+   "size_bytes": 344216,
+   "sha256": "ba21023c7054d4488f77dcacf0cd8e0bb3f4f64e9a7810b3287d4f99c06cb16a",
+   "auth": "civitai-key",
+   "optional": true,
+   "licence": {
+    "name": "Illustrious base: Fair AI Public License 1.0-SD + the creator's CivitAI permissions",
+    "url": "https://civitai.com/models/1302719?modelVersionId=1860747",
+    "url2": "https://freedevproject.org/faipl-1.0-sd/",
+    "summary": "Creator allows: images for commercial use; no derivatives; no credit needed."
+   }
+  },
+  {
+   "id": "marshmallow_anima",
+   "component": "cinematic",
+   "what": "Marshmallow Milk Anima v1.0 (by mommymia) - Cinematic scenes and portraits",
+   "kind": "model",
+   "source": "civitai",
+   "model_id": 2968947,
+   "version_id": 3364206,
+   "file_id": 3252168,
+   "url": "https://civitai.com/api/download/models/3364206?fileId=3252168",
+   "filename": "marshmallowMilkAnima_v10.safetensors",
+   "folder": "diffusion_models",
+   "size_bytes": 4182230672,
+   "sha256": "abec387db7e6b92ef49632ebe723ee5ea4a420b537809759969269c9f2c8a4d5",
+   "auth": "civitai-key",
+   "licence": {
+    "name": "Anima base: CircleStone Labs Non-Commercial License v1.2 + the creator's CivitAI permissions",
+    "url": "https://huggingface.co/circlestone-labs/Anima/blob/main/LICENSE.md",
+    "url2": "https://civitai.com/models/2968947?modelVersionId=3364206",
+    "summary": "Personal, non-commercial use only. Pictures you make may be used freely. Creator: no derivatives, credit required."
+   }
+  },
+  {
+   "id": "anima_aesthetic",
+   "component": "cinematic",
+   "what": "Anima Aesthetic v1.1 (official, CircleStone Labs) - Cinematic without a CivitAI key",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "circlestone-labs/Anima",
+   "hf_file": "split_files/diffusion_models/anima-aesthetic-v1.1.safetensors",
+   "filename": "anima-aesthetic-v1.1.safetensors",
+   "folder": "diffusion_models",
+   "size_bytes": 4182230656,
+   "sha256": "3c1868387a3a1ff504bbb87c33678321965ead381fcf87afbd0264daa600c082",
+   "auth": "none",
+   "optional": true,
+   "licence": {
+    "name": "CircleStone Labs Non-Commercial License v1.2",
+    "url": "https://huggingface.co/circlestone-labs/Anima/blob/main/LICENSE.md",
+    "summary": "Personal, non-commercial use only. Pictures you make may be used freely."
+   }
+  },
+  {
+   "id": "qwen_text_encoder",
+   "component": "cinematic",
+   "what": "Qwen3 0.6B text encoder (reads the prompt for Anima)",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "circlestone-labs/Anima",
+   "hf_file": "split_files/text_encoders/qwen_3_06b_base.safetensors",
+   "filename": "qwen_3_06b_base.safetensors",
+   "folder": "text_encoders",
+   "size_bytes": 1192135096,
+   "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+   "auth": "none",
+   "licence": {
+    "name": "Apache License 2.0 (Qwen3-0.6B)",
+    "url": "https://huggingface.co/Qwen/Qwen3-0.6B-Base",
+    "url2": "https://huggingface.co/circlestone-labs/Anima",
+    "summary": "Free to use, also commercially; keep the licence and notices."
+   }
+  },
+  {
+   "id": "qwen_image_vae",
+   "component": "cinematic",
+   "what": "Qwen-Image VAE (turns Anima's work into pixels)",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "circlestone-labs/Anima",
+   "hf_file": "split_files/vae/qwen_image_vae.safetensors",
+   "filename": "qwen_image_vae.safetensors",
+   "folder": "vae",
+   "size_bytes": 253806246,
+   "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+   "auth": "none",
+   "licence": {
+    "name": "Apache License 2.0 (Qwen-Image)",
+    "url": "https://huggingface.co/Qwen/Qwen-Image",
+    "summary": "Free to use, also commercially; keep the licence and notices."
+   }
+  },
+  {
+   "id": "ace15_turbo",
+   "component": "music",
+   "what": "ACE-Step 1.5 turbo - makes the background music",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "Comfy-Org/ace_step_1.5_ComfyUI_files",
+   "hf_file": "split_files/diffusion_models/acestep_v1.5_turbo.safetensors",
+   "filename": "acestep_v1.5_turbo.safetensors",
+   "folder": "diffusion_models",
+   "size_bytes": 4787825604,
+   "sha256": "3f6e0797fad420a39bd33979eb6e840e30989e34a3794e843d23b60ec6e422d7",
+   "auth": "none",
+   "licence": {
+    "name": "ACE-Step 1.5: MIT License (ComfyUI repack by Comfy-Org: Apache License 2.0)",
+    "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+    "url2": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files",
+    "summary": "Free to use, also commercially; keep the licence notice."
+   }
+  },
+  {
+   "id": "ace15_qwen_06b",
+   "component": "music",
+   "what": "Qwen3 0.6B for ACE-Step (reads the music description)",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "Comfy-Org/ace_step_1.5_ComfyUI_files",
+   "hf_file": "split_files/text_encoders/qwen_0.6b_ace15.safetensors",
+   "filename": "qwen_0.6b_ace15.safetensors",
+   "folder": "text_encoders",
+   "size_bytes": 1191588248,
+   "sha256": "fd4590c82153b8ddb67e15a2e7aaa8afa8b83a858c8a9b82a4831063156aa7a7",
+   "auth": "none",
+   "licence": {
+    "name": "Qwen3 base: Apache License 2.0; ACE-Step 1.5: MIT; ComfyUI repack by Comfy-Org: Apache License 2.0",
+    "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+    "url2": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files",
+    "summary": "Free to use, also commercially; keep the licence notice."
+   }
+  },
+  {
+   "id": "ace15_qwen_17b",
+   "component": "music",
+   "what": "Qwen3 1.7B for ACE-Step (plans the music)",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "Comfy-Org/ace_step_1.5_ComfyUI_files",
+   "hf_file": "split_files/text_encoders/qwen_1.7b_ace15.safetensors",
+   "filename": "qwen_1.7b_ace15.safetensors",
+   "folder": "text_encoders",
+   "size_bytes": 3708523360,
+   "sha256": "ed63e9247d1f55f3ace04fa11e95b085fc82d459c82c5626f0b2e37b91ebd710",
+   "auth": "none",
+   "licence": {
+    "name": "Qwen3 base: Apache License 2.0; ACE-Step 1.5: MIT; ComfyUI repack by Comfy-Org: Apache License 2.0",
+    "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+    "url2": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files",
+    "summary": "Free to use, also commercially; keep the licence notice."
+   }
+  },
+  {
+   "id": "ace15_vae",
+   "component": "music",
+   "what": "ACE-Step 1.5 VAE (turns the music into sound)",
+   "kind": "model",
+   "source": "huggingface",
+   "hf_repo": "Comfy-Org/ace_step_1.5_ComfyUI_files",
+   "hf_file": "split_files/vae/ace_1.5_vae.safetensors",
+   "filename": "ace_1.5_vae.safetensors",
+   "folder": "vae",
+   "size_bytes": 337431732,
+   "sha256": "6de92e3a862acd287e08b024ac90f0783a8635451b728721a33ff03565bcb2bb",
+   "auth": "none",
+   "licence": {
+    "name": "ACE-Step 1.5: MIT License (ComfyUI repack by Comfy-Org: Apache License 2.0)",
+    "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+    "url2": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files",
+    "summary": "Free to use, also commercially; keep the licence notice."
+   }
+  }
+ ]
+}

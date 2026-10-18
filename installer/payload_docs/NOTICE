@@ -1,0 +1,26 @@
+Story Lab
+Copyright 2026 Vsevolod Kiriouchine
+https://github.com/Kiriouchine/StoryLab
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Story Lab's own source code is the Apache-2.0 part. The programs and models
+it uses are NOT included in this package: Story Lab Setup downloads each one
+from its makers, under that maker's licence, after you agree to it. See
+THIRD_PARTY_NOTICES.md for the list.
+
+Contains the setup assistant's downloader design from CiviImport
+(https://github.com/Kiriouchine/CiviImport, MIT, same author).
+
+Bundled in this package (redistributed unmodified):
+  uv.exe   - Astral Software Inc., MIT OR Apache-2.0 (https://github.com/astral-sh/uv)
+  7zr.exe  - Igor Pavlov, 7-Zip reduced console version, public domain
+             (https://www.7-zip.org)
+
+Fan content
+  The built-in story "Hogwarts - Dracona & Harry" is an unofficial,
+  non-commercial fan setup. Harry Potter, Hogwarts and related names are
+  trademarks of Warner Bros. Entertainment Inc.; the Harry Potter books are
+  by J.K. Rowling. Story Lab is not affiliated with, endorsed or sponsored
+  by them. The Apache licence above covers Story Lab's own code only and
+  grants no rights to those names or characters.

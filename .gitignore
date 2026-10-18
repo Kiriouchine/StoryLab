@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Made by the game and Story Lab Setup on each PC
+storylab_paths.json
+image_prompt_settings.json
+stories/
+saves/
+runSaves/
+*.part
+
+# Installer: build output, and the tools python installer/fetch_tools.py downloads
+installer/build/
+installer/dist/
+installer/tools/
+installer/vendor/uv/
+installer/vendor/uv.zip
+installer/vendor/7zr.exe
+
+# Editors
+.idea/
