@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="release/StoryLabSetup-12.4.exe"><img src="https://img.shields.io/badge/download-StoryLabSetup--12.4.exe-2ea44f?style=for-the-badge" alt="Download StoryLabSetup-12.4.exe"></a>
+  <a href="https://github.com/Kiriouchine/StoryLab/releases/latest"><img src="https://img.shields.io/badge/Download-Story%20Lab%20for%20Windows-2ea44f?style=for-the-badge" alt="Download Story Lab for Windows"></a>
 </p>
 
 <p align="center">
@@ -61,8 +61,9 @@ is Kaya & Bobb in the Cyberpunk look:
 
 ## Play it
 
-1. Download **[`release/StoryLabSetup-12.4.exe`](release/StoryLabSetup-12.4.exe)**
-   (16 MB) and run it. It installs for your user only, with no admin rights.
+1. Download **StoryLabSetup-12.4.exe** (16 MB) from the
+   [latest release](https://github.com/Kiriouchine/StoryLab/releases/latest)
+   and run it. It installs for your user only, with no admin rights.
 2. The setup builds Story Lab's own Python (about 4 minutes), then opens
    **Story Lab Setup**. Setup checks your PC, lets you pick pictures and music,
    shows each model's licence for you to agree to, and downloads only what is
@@ -163,7 +164,6 @@ resized, arranged side by side and captioned.
 | `story_lab_metrics.py` | line checks the engine uses |
 | `Workflow_*.json`, `Musicgenerator_ace_1v5_good.json` | the ComfyUI workflows (API format) |
 | `installer/` | the Windows installer and Story Lab Setup. See [installer/README.md](installer/README.md) |
-| `release/` | the built setup file |
 | `docs/media/` | the pictures on this page |
 
 ### Run from source
@@ -197,6 +197,9 @@ where everything is, which is why installing is the recommended way.
 python installer\fetch_tools.py      # uv 0.13.1, 7zr 26.04, Inno Setup 7.1.0 (SHA-256 checked)
 python installer\build_installer.py  # -> installer\dist\StoryLabSetup-12.4.exe
 ```
+
+The setup file is not kept in the repository. Each version's file is
+attached to its [GitHub release](https://github.com/Kiriouchine/StoryLab/releases).
 
 ### If the story is slow
 

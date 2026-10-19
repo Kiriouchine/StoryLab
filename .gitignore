@@ -21,3 +21,7 @@ installer/vendor/7zr.exe
 
 # Editors
 .idea/
+
+# The setup file goes to a GitHub release, not into git
+release/
+*.exe

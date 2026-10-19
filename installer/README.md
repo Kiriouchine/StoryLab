@@ -59,6 +59,10 @@ each file's SHA-256:
 
 The repository does not carry these programs.
 
+To publish a version, attach `installer\dist\StoryLabSetup-<version>.exe` to
+a GitHub release tagged `v<version>` (for example `v12.4`). The setup file is
+never committed to git.
+
 ## Files
 
 | file | what |
